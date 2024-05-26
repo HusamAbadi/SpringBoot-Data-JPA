@@ -6,26 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.codewithhusam.model.Player;
-import com.codewithhusam.repo.PlayerRepository;
+import com.codewithhusam.model.Book;
+import com.codewithhusam.repo.BookRepository;
 
 @SpringBootTest
 class SpringjpaApplicationTests {
 
 	@Autowired
-	private PlayerRepository playerRepository;
+	private BookRepository bookRepository;
 
 	@Test
 	public void testSavePlayer() {
-		Player player = new Player();
-		player.setId(1L);
-		player.setName("Husam");
-		player.setScore(2);
+		Book book = new Book();
+		book.setId(1L);
+		book.setTitle("Book Title");
+		book.setAuthor("Husam");
+		book.setRating(2);
 
-		playerRepository.save(player);
+		bookRepository.save(book);
 
-		Player savedPlayer = playerRepository.findById(1L).get();
-		assertNotNull(savedPlayer);
+		Book savedBook = bookRepository.findById(1L).get();
+		assertNotNull(savedBook);
 	}
 
 }
