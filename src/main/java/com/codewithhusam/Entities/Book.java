@@ -1,9 +1,6 @@
 package com.codewithhusam.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
@@ -13,8 +10,7 @@ public class Book {
     private long id;
     private String title;
     private String author;
-    private int price;
-    private String description;
+    private double price;
     private int rating;
 
     public long getId() {
@@ -41,20 +37,12 @@ public class Book {
         this.author = author;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getRating() {
